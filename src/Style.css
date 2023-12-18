@@ -1,0 +1,86 @@
+body {
+    background-color: #f9f7fe;
+}
+a {
+    color:#66578d;
+    text-decoration: none;
+}
+.welcome{
+    text-align: center;
+}
+.weather-app{
+    background-color: #fff;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+}
+.form-input {
+    background-color: #f9f7fe;
+    border: none;
+    border-radius: 10px;
+    width: 75%;
+    padding: 10px;
+    margin-left: 10px;
+    height: 45px;
+    font-size: 16px;
+}
+.form-in-but {
+    background-color: #ae99e6;
+    border: none;
+    width: 15%;
+    height: 45px;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.first-port {
+    display: flex;
+    justify-content: space-between;
+}
+.city {
+    padding: 15px 0px 0px 10px;
+    margin: 10px 5px 0px 0px;
+    
+}
+.current-tem-degree{
+position: relative;
+padding: 30px 0px 0px 10px;
+font-size: 80px;
+right: 30px;
+}
+.current-tem-icon {
+    font-size: 50px;
+    position: relative;
+    top: 50px;
+    right: 30px;
+    color: #b7d7f5fd;
+}
+.current-tem-unit {
+    font-size: 30px;
+    position: relative;
+    top: 30px;
+    right: 33px;
+}
+.sec-port {
+    display: flex;
+}
+.current-date {
+padding-left: 10px;
+color: rgba(39, 33, 66, 0.4);
+position: relative;
+top: -50px;
+font-size: 18px;
+}
+.current-date strong {
+    color: rgb(235, 140, 156);
+}
+.current-temperature{
+    display: flex;
+}
+.part-three {
+    text-align: center;
+    color: rgba(39, 33, 66, 0.4);
+    padding: 0px 0px 10px 0px;
+    font-size: 15px;
+}

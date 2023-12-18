@@ -3,40 +3,43 @@
   <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="src/Style.css">
+        <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
         <title>Weather app developed</title>
     </head>
   <body>
-        <h1>Welcome to my weather app 🙌</h1>
+    <div class="weather-app">
+        <h1 class="welcome">Welcome to my weather app 🙌</h1>
     <header>
-        <form>
-         <input type="search" placeholder="Enter A City" required />
-         <input type="submit" value="search" />
+        <form id="first-form">
+         <input type="search" placeholder="Enter A City" required  class="form-input" id="form-input"/>
+         <input type="submit" value="search" class="form-in-but" />
       </form>
     </header>
     <main>
-        <h1>Afghanistan</h1>
-      <div>
-            <p>
-            Tuesday 14:20, scattered clouds <br />
-            Humidity: 63%, Wind: 2.68Km/H
-            </p>
+      <div class="first-port">
+        <h1 class="city" id="city"></h1>
+      <div class="current-temperature">
+         <div class="current-tem-icon"> ☁ </div>
+         <div class="current-tem-degree" id="current-tem-degree"></div>
+         <div class="current-tem-unit"> &deg;F</div>
       </div>
-
-      <div>
-         ☁ 24&deg;F
       </div>
+      <div class="sec-port">
+      <p class="current-date">
+      Tuesday 14:20, scattered clouds <br />
+      Humidity: <strong>63% </strong>, Wind:<strong> 2.68Km/H </strong>
+      </p>
     </main>
-    <footer>
+    <footer class="part-three">
       coded by
       <a href="https://github.com/Tamana543" target="_blank">Tamana Farzami</a>
       and is open sourced
-      <a href="https://github.com/Tamana543/Weather-app-Development"
-        >on Git Hub</a
-      >
+      <a href="https://github.com/Tamana543/Weather-app-Development">on Git Hub</a>
       and
-      <a href="https://weather-app-tamanafarzami.netlify.app/"
-        >hosted on Netlify</a
-      >
+      <a href="https://weather-app-tamanafarzami.netlify.app/">hosted on Netlify</a >
     </footer>
+  </div>
+ <script src="src/java.js"></script>
   </body>
 </html>
