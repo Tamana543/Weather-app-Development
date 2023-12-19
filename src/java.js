@@ -16,6 +16,16 @@ function changeTemperature(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   headingTwo.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperature);
+  emojiIngine(response);
+}
+function emojiIngine(response) {
+  let emojiElement = document.querySelector("#emoji");
+  let emojiData = response.data.temperature.current;
+  if (emojiData < 10) {
+    emojiElement.innerHTML = "😎";
+  } else {
+    emojiElement.innerHTML = "🥵";
+  }
 }
 
 function formatDate(date) {
