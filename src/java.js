@@ -17,6 +17,7 @@ function changeTemperature(response) {
   headingTwo.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperature);
   emojiIngine(response);
+  forcastTemperature(response.data.city);
 }
 function emojiIngine(response) {
   let emojiElement = document.querySelector("#emoji");
@@ -61,6 +62,48 @@ function searchIngine(event) {
   let searchInput = document.querySelector("#form-input");
 
   showUser(searchInput.value);
+}
+function forcastTemperature(city) {
+  let apiKey = "002f53aof18d4ab43a5e5047f8f74ctd";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+function forecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  return days[date.getDay()];
+}
+function displayForecast(response) {
+  let forecastHtml = "";
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        ` 
+    <div class="weather-forcast-date">
+    <div class="forcast-day">${forecastDay(day.time)}</div>
+    <div>
+      <img src="${
+        day.condition.icon_url
+      }" alt="forcast image" class="forcast -img"/>
+    </div>
+    <div class="forcast-tem-num">
+      <span class="for-tem-num-max">${Math.round(
+        day.temperature.maximum
+      )}&deg;</span>
+      &nbsp;
+      <span class="for-tem-num-min">${Math.round(
+        day.temperature.minimum
+      )}&deg;</span>
+    </div>
+    </div>
+    `;
+    }
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
 }
 
 let searchForm = document.querySelector("#first-form");
